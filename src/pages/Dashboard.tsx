@@ -55,19 +55,19 @@ export function Dashboard() {
   const navigate = useNavigate();
 
   return (
-    <div className="space-y-8 pb-12 font-sans">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    <div className="space-y-4 pb-6 font-sans">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
         <div>
-          <h2 className="text-3xl font-extrabold text-[#0A2540] tracking-tight">Tổng quan Đầu tư</h2>
-          <p className="text-slate-500 mt-2 text-sm font-medium">Theo dõi hiệu quả và tiến độ danh mục dự án toàn hệ thống.</p>
+          <h2 className="text-2xl font-extrabold text-[#0A2540] tracking-tight">Tổng quan Đầu tư</h2>
+          <p className="text-slate-500 mt-1 text-sm font-medium">Theo dõi hiệu quả và tiến độ danh mục dự án toàn hệ thống.</p>
         </div>
-        <div className="flex space-x-3">
-          <select className="bg-white border-0 shadow-sm text-[#0A2540] text-sm font-semibold rounded-xl focus:ring-2 focus:ring-[#2E68FF] block p-3 outline-none cursor-pointer">
+        <div className="flex space-x-2">
+          <select className="bg-white border border-slate-200 shadow-sm text-[#0A2540] text-sm font-semibold rounded-lg focus:ring-2 focus:ring-[#2E68FF] block p-2 outline-none cursor-pointer">
             <option>Năm 2026</option>
             <option>Năm 2025</option>
             <option>Năm 2024</option>
           </select>
-          <select className="bg-white border-0 shadow-sm text-[#0A2540] text-sm font-semibold rounded-xl focus:ring-2 focus:ring-[#2E68FF] block p-3 outline-none cursor-pointer">
+          <select className="bg-white border border-slate-200 shadow-sm text-[#0A2540] text-sm font-semibold rounded-lg focus:ring-2 focus:ring-[#2E68FF] block p-2 outline-none cursor-pointer">
             <option>Tất cả Khối/SBU</option>
             <option>Khối Sản xuất</option>
             <option>Khối Bán lẻ</option>
@@ -77,155 +77,155 @@ export function Dashboard() {
       </div>
 
       {/* Interactive Stats Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
+      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3">
         <div 
           onClick={() => navigate('/projects')}
-          className="bg-white p-6 rounded-2xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(10,37,64,0.08)] cursor-pointer group relative overflow-hidden border border-slate-100"
+          className="bg-white p-4 rounded-xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(10,37,64,0.08)] cursor-pointer group relative overflow-hidden border border-slate-100"
         >
-          <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-slate-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+          <div className="absolute top-0 right-0 -mt-2 -mr-2 w-16 h-16 bg-gradient-to-br from-slate-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
           <div className="flex flex-col relative z-10 h-full justify-between">
-            <div className="h-12 w-12 bg-slate-50 rounded-xl flex items-center justify-center group-hover:bg-[#0A2540] group-hover:scale-110 transition-all duration-300 mb-4 shadow-sm">
-              <FileText className="h-6 w-6 text-slate-500 group-hover:text-white transition-colors" />
+            <div className="h-8 w-8 bg-slate-50 rounded-lg flex items-center justify-center group-hover:bg-[#0A2540] group-hover:scale-110 transition-all duration-300 mb-2 shadow-sm">
+              <FileText className="h-4 w-4 text-slate-500 group-hover:text-white transition-colors" />
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-[#0A2540]">132</p>
-              <p className="text-sm font-semibold text-slate-500 mt-1 group-hover:text-[#0A2540] transition-colors">Tổng dự án</p>
+              <p className="text-2xl font-extrabold text-[#0A2540]">132</p>
+              <p className="text-xs font-semibold text-slate-500 mt-0.5 group-hover:text-[#0A2540] transition-colors">Tổng dự án</p>
             </div>
           </div>
         </div>
 
         <div 
           onClick={() => navigate('/projects?status=Đang triển khai')}
-          className="bg-white p-6 rounded-2xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(46,104,255,0.15)] cursor-pointer group relative overflow-hidden border border-slate-100"
+          className="bg-white p-4 rounded-xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(46,104,255,0.15)] cursor-pointer group relative overflow-hidden border border-slate-100"
         >
-          <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-blue-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+          <div className="absolute top-0 right-0 -mt-2 -mr-2 w-16 h-16 bg-gradient-to-br from-blue-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
           <div className="flex flex-col relative z-10 h-full justify-between">
-            <div className="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-[#2E68FF] group-hover:scale-110 transition-all duration-300 mb-4 shadow-sm">
-              <PlayCircle className="h-6 w-6 text-[#2E68FF] group-hover:text-white transition-colors" />
+            <div className="h-8 w-8 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-[#2E68FF] group-hover:scale-110 transition-all duration-300 mb-2 shadow-sm">
+              <PlayCircle className="h-4 w-4 text-[#2E68FF] group-hover:text-white transition-colors" />
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-[#0A2540]">23</p>
-              <p className="text-sm font-semibold text-slate-500 mt-1 group-hover:text-[#2E68FF] transition-colors">Đang triển khai</p>
+              <p className="text-2xl font-extrabold text-[#0A2540]">23</p>
+              <p className="text-xs font-semibold text-slate-500 mt-0.5 group-hover:text-[#2E68FF] transition-colors">Đang triển khai</p>
             </div>
           </div>
         </div>
 
         <div 
           onClick={() => navigate('/projects?status=Chờ phê duyệt')}
-          className="bg-white p-6 rounded-2xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(245,158,11,0.15)] cursor-pointer group relative overflow-hidden border border-slate-100"
+          className="bg-white p-4 rounded-xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(245,158,11,0.15)] cursor-pointer group relative overflow-hidden border border-slate-100"
         >
-          <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-amber-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+          <div className="absolute top-0 right-0 -mt-2 -mr-2 w-16 h-16 bg-gradient-to-br from-amber-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
           <div className="flex flex-col relative z-10 h-full justify-between">
-            <div className="h-12 w-12 bg-amber-50 rounded-xl flex items-center justify-center group-hover:bg-amber-500 group-hover:scale-110 transition-all duration-300 mb-4 shadow-sm">
-              <Clock className="h-6 w-6 text-amber-500 group-hover:text-white transition-colors" />
+            <div className="h-8 w-8 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-500 group-hover:scale-110 transition-all duration-300 mb-2 shadow-sm">
+              <Clock className="h-4 w-4 text-amber-500 group-hover:text-white transition-colors" />
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-[#0A2540]">15</p>
-              <p className="text-sm font-semibold text-slate-500 mt-1 group-hover:text-amber-600 transition-colors">Chờ phê duyệt</p>
+              <p className="text-2xl font-extrabold text-[#0A2540]">15</p>
+              <p className="text-xs font-semibold text-slate-500 mt-0.5 group-hover:text-amber-600 transition-colors">Chờ phê duyệt</p>
             </div>
           </div>
         </div>
 
         <div 
           onClick={() => navigate('/projects?status=Đã phê duyệt')}
-          className="bg-white p-6 rounded-2xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(16,185,129,0.15)] cursor-pointer group relative overflow-hidden border border-slate-100"
+          className="bg-white p-4 rounded-xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(16,185,129,0.15)] cursor-pointer group relative overflow-hidden border border-slate-100"
         >
-          <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-emerald-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+          <div className="absolute top-0 right-0 -mt-2 -mr-2 w-16 h-16 bg-gradient-to-br from-emerald-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
           <div className="flex flex-col relative z-10 h-full justify-between">
-            <div className="h-12 w-12 bg-emerald-50 rounded-xl flex items-center justify-center group-hover:bg-emerald-500 group-hover:scale-110 transition-all duration-300 mb-4 shadow-sm">
-              <CheckCircle2 className="h-6 w-6 text-emerald-500 group-hover:text-white transition-colors" />
+            <div className="h-8 w-8 bg-emerald-50 rounded-lg flex items-center justify-center group-hover:bg-emerald-500 group-hover:scale-110 transition-all duration-300 mb-2 shadow-sm">
+              <CheckCircle2 className="h-4 w-4 text-emerald-500 group-hover:text-white transition-colors" />
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-[#0A2540]">86</p>
-              <p className="text-sm font-semibold text-slate-500 mt-1 group-hover:text-emerald-600 transition-colors">Đã phê duyệt</p>
+              <p className="text-2xl font-extrabold text-[#0A2540]">86</p>
+              <p className="text-xs font-semibold text-slate-500 mt-0.5 group-hover:text-emerald-600 transition-colors">Đã phê duyệt</p>
             </div>
           </div>
         </div>
 
         <div 
           onClick={() => navigate('/projects?status=Từ chối')}
-          className="bg-white p-6 rounded-2xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(244,63,94,0.15)] cursor-pointer group relative overflow-hidden border border-slate-100"
+          className="bg-white p-4 rounded-xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(244,63,94,0.15)] cursor-pointer group relative overflow-hidden border border-slate-100"
         >
-          <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-rose-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+          <div className="absolute top-0 right-0 -mt-2 -mr-2 w-16 h-16 bg-gradient-to-br from-rose-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
           <div className="flex flex-col relative z-10 h-full justify-between">
-            <div className="h-12 w-12 bg-rose-50 rounded-xl flex items-center justify-center group-hover:bg-rose-500 group-hover:scale-110 transition-all duration-300 mb-4 shadow-sm">
-              <XCircle className="h-6 w-6 text-rose-500 group-hover:text-white transition-colors" />
+            <div className="h-8 w-8 bg-rose-50 rounded-lg flex items-center justify-center group-hover:bg-rose-500 group-hover:scale-110 transition-all duration-300 mb-2 shadow-sm">
+              <XCircle className="h-4 w-4 text-rose-500 group-hover:text-white transition-colors" />
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-[#0A2540]">8</p>
-              <p className="text-sm font-semibold text-slate-500 mt-1 group-hover:text-rose-600 transition-colors">Từ chối</p>
+              <p className="text-2xl font-extrabold text-[#0A2540]">8</p>
+              <p className="text-xs font-semibold text-slate-500 mt-0.5 group-hover:text-rose-600 transition-colors">Từ chối</p>
             </div>
           </div>
         </div>
 
         <div 
           onClick={() => navigate('/projects?risk=true')}
-          className="bg-white p-6 rounded-2xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(239,68,68,0.15)] cursor-pointer group relative overflow-hidden border border-slate-100"
+          className="bg-white p-4 rounded-xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(239,68,68,0.15)] cursor-pointer group relative overflow-hidden border border-slate-100"
         >
-          <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-red-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+          <div className="absolute top-0 right-0 -mt-2 -mr-2 w-16 h-16 bg-gradient-to-br from-red-100 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
           <div className="flex flex-col relative z-10 h-full justify-between">
-            <div className="h-12 w-12 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-red-500 group-hover:scale-110 transition-all duration-300 mb-4 shadow-sm">
-              <AlertCircle className="h-6 w-6 text-red-500 group-hover:text-white transition-colors" />
+            <div className="h-8 w-8 bg-red-50 rounded-lg flex items-center justify-center group-hover:bg-red-500 group-hover:scale-110 transition-all duration-300 mb-2 shadow-sm">
+              <AlertCircle className="h-4 w-4 text-red-500 group-hover:text-white transition-colors" />
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-red-500">8</p>
-              <p className="text-sm font-semibold text-slate-500 mt-1 group-hover:text-red-600 transition-colors">Rủi ro cao</p>
+              <p className="text-2xl font-extrabold text-red-500">8</p>
+              <p className="text-xs font-semibold text-slate-500 mt-0.5 group-hover:text-red-600 transition-colors">Rủi ro cao</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Charts Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* CapEx Trend Chart */}
-        <div className="bg-white p-8 rounded-3xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] border border-slate-100 transition-all duration-300 hover:shadow-[0_10px_20px_rgba(10,37,64,0.08)] group">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-xl font-bold text-[#0A2540] flex items-center">
-              <div className="p-2 bg-blue-50 rounded-lg mr-3">
-                <Activity className="h-5 w-5 text-[#2E68FF]" />
+        <div className="bg-white p-4 rounded-xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] border border-slate-100 transition-all duration-300 hover:shadow-[0_10px_20px_rgba(10,37,64,0.08)] group">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-bold text-[#0A2540] flex items-center">
+              <div className="p-1.5 bg-blue-50 rounded-lg mr-2">
+                <Activity className="h-4 w-4 text-[#2E68FF]" />
               </div>
               Giải ngân CapEx vs Ngân sách
             </h3>
           </div>
-          <div className="h-72">
+          <div className="h-56">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={capexData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 13, fontWeight: 500 }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 13, fontWeight: 500 }} />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 11, fontWeight: 500 }} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 11, fontWeight: 500 }} />
                 <Tooltip 
                   cursor={{ fill: '#f8fafc' }}
-                  contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 25px -5px rgba(10,37,64,0.1)', fontWeight: 600, color: '#0A2540' }}
+                  contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 10px 25px -5px rgba(10,37,64,0.1)', fontWeight: 600, color: '#0A2540', fontSize: '12px' }}
                 />
-                <Legend iconType="circle" wrapperStyle={{ paddingTop: '20px', fontSize: '13px', fontWeight: 500, color: '#64748b' }} />
-                <Bar dataKey="capex" name="Thực tế" fill="#2E68FF" radius={[6, 6, 0, 0]} barSize={28} />
-                <Bar dataKey="budget" name="Ngân sách" fill="#e2e8f0" radius={[6, 6, 0, 0]} barSize={28} />
+                <Legend iconType="circle" wrapperStyle={{ paddingTop: '10px', fontSize: '11px', fontWeight: 500, color: '#64748b' }} />
+                <Bar dataKey="capex" name="Thực tế" fill="#2E68FF" radius={[4, 4, 0, 0]} barSize={20} />
+                <Bar dataKey="budget" name="Ngân sách" fill="#e2e8f0" radius={[4, 4, 0, 0]} barSize={20} />
               </BarChart>
             </ResponsiveContainer>
           </div>
         </div>
 
         {/* IRR Performance Chart */}
-        <div className="bg-white p-8 rounded-3xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] border border-slate-100 transition-all duration-300 hover:shadow-[0_10px_20px_rgba(10,37,64,0.08)] group">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-xl font-bold text-[#0A2540] flex items-center">
-              <div className="p-2 bg-emerald-50 rounded-lg mr-3">
-                <TrendingUp className="h-5 w-5 text-emerald-500" />
+        <div className="bg-white p-4 rounded-xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] border border-slate-100 transition-all duration-300 hover:shadow-[0_10px_20px_rgba(10,37,64,0.08)] group">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-bold text-[#0A2540] flex items-center">
+              <div className="p-1.5 bg-emerald-50 rounded-lg mr-2">
+                <TrendingUp className="h-4 w-4 text-emerald-500" />
               </div>
               Hiệu quả Đầu tư (IRR %)
             </h3>
           </div>
-          <div className="h-72">
+          <div className="h-56">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={irrData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 13, fontWeight: 500 }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 13, fontWeight: 500 }} />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 11, fontWeight: 500 }} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 11, fontWeight: 500 }} />
                 <Tooltip 
-                  contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 25px -5px rgba(10,37,64,0.1)', fontWeight: 600, color: '#0A2540' }}
+                  contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 10px 25px -5px rgba(10,37,64,0.1)', fontWeight: 600, color: '#0A2540', fontSize: '12px' }}
                 />
-                <Legend iconType="circle" wrapperStyle={{ paddingTop: '20px', fontSize: '13px', fontWeight: 500, color: '#64748b' }} />
-                <Line type="monotone" dataKey="actual" name="IRR Thực tế" stroke="#10b981" strokeWidth={4} dot={{ r: 6, strokeWidth: 3, fill: '#fff' }} activeDot={{ r: 8, fill: '#10b981', stroke: '#fff', strokeWidth: 3 }} />
+                <Legend iconType="circle" wrapperStyle={{ paddingTop: '10px', fontSize: '11px', fontWeight: 500, color: '#64748b' }} />
+                <Line type="monotone" dataKey="actual" name="IRR Thực tế" stroke="#10b981" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, fill: '#fff' }} activeDot={{ r: 6, fill: '#10b981', stroke: '#fff', strokeWidth: 2 }} />
                 <Line type="monotone" dataKey="target" name="IRR Mục tiêu" stroke="#94a3b8" strokeWidth={2} strokeDasharray="5 5" dot={false} />
               </LineChart>
             </ResponsiveContainer>
@@ -234,24 +234,24 @@ export function Dashboard() {
       </div>
 
       {/* Lower Section: Projects & Insights */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {/* Status Distribution */}
-        <div className="bg-white p-8 rounded-3xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] border border-slate-100 transition-all duration-300 hover:shadow-[0_10px_20px_rgba(10,37,64,0.08)] group">
-          <h3 className="text-xl font-bold text-[#0A2540] mb-6 flex items-center">
-            <div className="p-2 bg-blue-50 rounded-lg mr-3">
-              <BarChart3 className="h-5 w-5 text-[#2E68FF]" />
+        <div className="bg-white p-4 rounded-xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] border border-slate-100 transition-all duration-300 hover:shadow-[0_10px_20px_rgba(10,37,64,0.08)] group">
+          <h3 className="text-lg font-bold text-[#0A2540] mb-4 flex items-center">
+            <div className="p-1.5 bg-blue-50 rounded-lg mr-2">
+              <BarChart3 className="h-4 w-4 text-[#2E68FF]" />
             </div>
             Trạng thái Hồ sơ
           </h3>
-          <div className="h-64 relative">
+          <div className="h-48 relative">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
                   data={statusData}
                   cx="50%"
                   cy="50%"
-                  innerRadius={70}
-                  outerRadius={90}
+                  innerRadius={50}
+                  outerRadius={70}
                   paddingAngle={5}
                   dataKey="value"
                   stroke="none"
@@ -261,75 +261,75 @@ export function Dashboard() {
                   ))}
                 </Pie>
                 <Tooltip 
-                  contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 25px -5px rgba(10,37,64,0.1)', fontWeight: 600, color: '#0A2540' }}
+                  contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 10px 25px -5px rgba(10,37,64,0.1)', fontWeight: 600, color: '#0A2540', fontSize: '12px' }}
                   itemStyle={{ color: '#0A2540', fontWeight: 600 }}
                 />
               </PieChart>
             </ResponsiveContainer>
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-              <span className="text-4xl font-extrabold text-[#0A2540]">132</span>
-              <span className="text-sm text-slate-500 font-semibold mt-1">Hồ sơ</span>
+              <span className="text-2xl font-extrabold text-[#0A2540]">132</span>
+              <span className="text-[10px] text-slate-500 font-semibold mt-0.5">Hồ sơ</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-y-4 gap-x-2 mt-6">
+          <div className="grid grid-cols-2 gap-y-2 gap-x-2 mt-4">
             {statusData.map((status, index) => (
               <div key={index} className="flex items-center">
-                <div className="w-3 h-3 rounded-full mr-2.5 shadow-sm" style={{ backgroundColor: status.color }}></div>
-                <span className="text-sm font-medium text-slate-600">{status.name} <span className="text-[#0A2540] font-bold ml-1">{status.value}</span></span>
+                <div className="w-2 h-2 rounded-full mr-1.5 shadow-sm" style={{ backgroundColor: status.color }}></div>
+                <span className="text-xs font-medium text-slate-600">{status.name} <span className="text-[#0A2540] font-bold ml-1">{status.value}</span></span>
               </div>
             ))}
           </div>
         </div>
 
         {/* AI Insights */}
-        <div className="lg:col-span-2 bg-white rounded-3xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] border border-slate-100 flex flex-col transition-all duration-300 hover:shadow-[0_10px_20px_rgba(10,37,64,0.08)] group overflow-hidden">
-          <div className="px-8 py-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-            <h3 className="text-xl font-bold text-[#0A2540] flex items-center">
-              <div className="p-2 bg-amber-50 rounded-lg mr-3">
-                <AlertCircle className="h-5 w-5 text-amber-500" />
+        <div className="lg:col-span-2 bg-white rounded-xl shadow-[0_2px_10px_rgba(10,37,64,0.04)] border border-slate-100 flex flex-col transition-all duration-300 hover:shadow-[0_10px_20px_rgba(10,37,64,0.08)] group overflow-hidden">
+          <div className="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+            <h3 className="text-lg font-bold text-[#0A2540] flex items-center">
+              <div className="p-1.5 bg-amber-50 rounded-lg mr-2">
+                <AlertCircle className="h-4 w-4 text-amber-500" />
               </div>
               AI Insights & Cảnh báo
             </h3>
             <button 
               onClick={() => toast.info("Tính năng đang phát triển")}
-              className="text-sm text-[#2E68FF] font-bold hover:text-[#1A4BCE] flex items-center group-hover:translate-x-1 transition-transform">
-              Xem tất cả <ArrowRight className="ml-1 h-4 w-4" />
+              className="text-xs text-[#2E68FF] font-bold hover:text-[#1A4BCE] flex items-center group-hover:translate-x-1 transition-transform">
+              Xem tất cả <ArrowRight className="ml-1 h-3 w-3" />
             </button>
           </div>
-          <div className="flex-1 p-8 space-y-4 overflow-y-auto">
-            <div className="flex space-x-4 p-5 bg-white rounded-2xl border border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-amber-200 cursor-default">
+          <div className="flex-1 p-4 space-y-3 overflow-y-auto max-h-[280px]">
+            <div className="flex space-x-3 p-3 bg-white rounded-xl border border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-amber-200 cursor-default">
               <div className="flex-shrink-0 mt-0.5">
-                <div className="p-2.5 bg-amber-50 rounded-xl">
-                  <AlertCircle className="h-5 w-5 text-amber-500" />
+                <div className="p-1.5 bg-amber-50 rounded-lg">
+                  <AlertCircle className="h-4 w-4 text-amber-500" />
                 </div>
               </div>
               <div>
-                <p className="text-base font-bold text-[#0A2540]">PRJ-2026-042: Rủi ro pháp lý (Điện gió Xuyên Mộc)</p>
-                <p className="text-sm text-slate-600 mt-2 leading-relaxed">Dự án thiếu báo cáo ĐTM (Đánh giá tác động môi trường). Đây là yêu cầu bắt buộc cho dự án Cấp 3. Đề xuất bổ sung trước khi trình duyệt.</p>
+                <p className="text-sm font-bold text-[#0A2540]">PRJ-2026-042: Rủi ro pháp lý (Điện gió Xuyên Mộc)</p>
+                <p className="text-xs text-slate-600 mt-1 leading-relaxed">Dự án thiếu báo cáo ĐTM (Đánh giá tác động môi trường). Đây là yêu cầu bắt buộc cho dự án Cấp 3. Đề xuất bổ sung trước khi trình duyệt.</p>
               </div>
             </div>
 
-            <div className="flex space-x-4 p-5 bg-white rounded-2xl border border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-[#2E68FF]/30 cursor-default">
+            <div className="flex space-x-3 p-3 bg-white rounded-xl border border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#2E68FF]/30 cursor-default">
               <div className="flex-shrink-0 mt-0.5">
-                <div className="p-2.5 bg-blue-50 rounded-xl">
-                  <TrendingUp className="h-5 w-5 text-[#2E68FF]" />
+                <div className="p-1.5 bg-blue-50 rounded-lg">
+                  <TrendingUp className="h-4 w-4 text-[#2E68FF]" />
                 </div>
               </div>
               <div>
-                <p className="text-base font-bold text-[#0A2540]">PRJ-2026-041: IRR vượt kỳ vọng (Logistics Bình Dương)</p>
-                <p className="text-sm text-slate-600 mt-2 leading-relaxed">IRR dự kiến đạt 18.5%, cao hơn mức hurdle rate (12%). Tuy nhiên, AI phát hiện giả định tăng trưởng doanh thu năm 2 khá lạc quan (+25%). Cần rà soát lại mô hình tài chính.</p>
+                <p className="text-sm font-bold text-[#0A2540]">PRJ-2026-041: IRR vượt kỳ vọng (Logistics Bình Dương)</p>
+                <p className="text-xs text-slate-600 mt-1 leading-relaxed">IRR dự kiến đạt 18.5%, cao hơn mức hurdle rate (12%). Tuy nhiên, AI phát hiện giả định tăng trưởng doanh thu năm 2 khá lạc quan (+25%). Cần rà soát lại mô hình tài chính.</p>
               </div>
             </div>
 
-            <div className="flex space-x-4 p-5 bg-white rounded-2xl border border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-emerald-200 cursor-default">
+            <div className="flex space-x-3 p-3 bg-white rounded-xl border border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-emerald-200 cursor-default">
               <div className="flex-shrink-0 mt-0.5">
-                <div className="p-2.5 bg-emerald-50 rounded-xl">
-                  <FileText className="h-5 w-5 text-emerald-500" />
+                <div className="p-1.5 bg-emerald-50 rounded-lg">
+                  <FileText className="h-4 w-4 text-emerald-500" />
                 </div>
               </div>
               <div>
-                <p className="text-base font-bold text-[#0A2540]">Gợi ý từ Feedback Loop (M&A TechStore)</p>
-                <p className="text-sm text-slate-600 mt-2 leading-relaxed">Dựa trên 5 dự án M&A bị từ chối gần nhất, Ban lãnh đạo thường yêu cầu bổ sung kịch bản "Post-merger Integration Costs". Đã tự động thêm vào checklist cho PRJ-2026-040.</p>
+                <p className="text-sm font-bold text-[#0A2540]">Gợi ý từ Feedback Loop (M&A TechStore)</p>
+                <p className="text-xs text-slate-600 mt-1 leading-relaxed">Dựa trên 5 dự án M&A bị từ chối gần nhất, Ban lãnh đạo thường yêu cầu bổ sung kịch bản "Post-merger Integration Costs". Đã tự động thêm vào checklist cho PRJ-2026-040.</p>
               </div>
             </div>
           </div>

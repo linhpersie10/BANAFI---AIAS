@@ -12,23 +12,27 @@ import { NewProject } from "./pages/NewProject";
 import { ProjectDrafting } from "./pages/ProjectDrafting";
 import { ProjectApproval } from "./pages/ProjectApproval";
 import { ProjectDeclaration } from "./pages/ProjectDeclaration";
+import { Settings } from "./pages/Settings";
+import { AuthProvider } from "./contexts/AuthContext";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Toaster position="top-right" />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="projects/new" element={<NewProject />} />
-          <Route path="projects/declare" element={<ProjectDeclaration />} />
-          <Route path="projects/:id/draft" element={<ProjectDrafting />} />
-          <Route path="projects/:id/approve" element={<ProjectApproval />} />
-          <Route path="templates" element={<div className="p-4 text-slate-500">Tính năng Biểu mẫu đang được phát triển</div>} />
-          <Route path="settings" element={<div className="p-4 text-slate-500">Tính năng Cài đặt đang được phát triển</div>} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Toaster position="top-right" />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="projects/new" element={<NewProject />} />
+            <Route path="projects/declare" element={<ProjectDeclaration />} />
+            <Route path="projects/:id/draft" element={<ProjectDrafting />} />
+            <Route path="projects/:id/approve" element={<ProjectApproval />} />
+            <Route path="templates" element={<div className="p-4 text-slate-500">Tính năng Biểu mẫu đang được phát triển</div>} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }

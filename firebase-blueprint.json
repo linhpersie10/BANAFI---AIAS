@@ -1,0 +1,25 @@
+{
+  "entities": {
+    "Category": {
+      "title": "Category",
+      "description": "A category containing a list of selectable items",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The display name of the category" },
+        "type": { "type": "string", "description": "The unique identifier for the category type" },
+        "items": { 
+          "type": "array", 
+          "items": { "type": "string" },
+          "description": "The list of items in this category"
+        }
+      },
+      "required": ["name", "type", "items"]
+    }
+  },
+  "firestore": {
+    "/categories/{categoryId}": {
+      "schema": "Category",
+      "description": "Collection of categories for dropdowns and forms"
+    }
+  }
+}
