@@ -10,16 +10,13 @@ import {
   ListChecks,
   FileCheck,
   AlertCircle,
-  Loader2,
-  Lock
+  Loader2
 } from "lucide-react";
 import { toast } from "sonner";
 import { collection, query, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
-import { useAuth } from "../contexts/AuthContext";
 
 export function ProjectDeclaration() {
-  const { user, loading: authLoading } = useAuth();
   const [categories, setCategories] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
@@ -36,13 +33,6 @@ export function ProjectDeclaration() {
   const [showChecklist, setShowChecklist] = useState(false);
 
   useEffect(() => {
-    if (!user) {
-      setCategories([]);
-      setLoading(false);
-      return;
-    }
-
-    setLoading(true);
     const q = query(collection(db, "categories"));
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const cats = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
@@ -50,14 +40,11 @@ export function ProjectDeclaration() {
       setLoading(false);
     }, (error) => {
       console.error("Error fetching categories:", error);
-      if (user) {
-        toast.error("Không có quyền truy cập dữ liệu danh mục");
-      }
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, [user]);
+  }, []);
 
   const getCategoryItems = (type: string) => {
     const cat = categories.find(c => c.type === type);
@@ -77,30 +64,6 @@ export function ProjectDeclaration() {
     setShowChecklist(true);
     toast.success("Đã tạo danh mục hồ sơ cần chuẩn bị");
   };
-
-  if (authLoading) {
-    return (
-      <div className="h-full flex items-center justify-center">
-        <Loader2 className="h-8 w-8 text-[#2E68FF] animate-spin" />
-      </div>
-    );
-  }
-
-  if (!user) {
-    return (
-      <div className="h-[calc(100vh-8rem)] flex flex-col items-center justify-center font-sans text-center">
-        <div className="bg-white p-12 rounded-3xl shadow-sm border border-slate-100 max-w-md">
-          <div className="bg-slate-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Lock className="h-10 w-10 text-slate-400" />
-          </div>
-          <h2 className="text-2xl font-bold text-[#0A2540] mb-2">Yêu cầu đăng nhập</h2>
-          <p className="text-slate-500 mb-8">
-            Bạn cần đăng nhập để thực hiện khai báo hồ sơ dự án.
-          </p>
-        </div>
-      </div>
-    );
-  }
 
   if (loading) {
     return (

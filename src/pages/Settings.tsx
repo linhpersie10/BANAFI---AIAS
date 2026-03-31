@@ -9,8 +9,7 @@ import {
   LayoutGrid,
   FileText,
   ChevronRight,
-  Loader2,
-  Lock
+  Loader2
 } from "lucide-react";
 import { 
   collection, 
@@ -26,7 +25,6 @@ import {
 } from "firebase/firestore";
 import { db, auth } from "../firebase";
 import { toast } from "sonner";
-import { useAuth } from "../contexts/AuthContext";
 
 interface Category {
   id: string;
@@ -94,7 +92,6 @@ const INITIAL_CATEGORIES = [
 ];
 
 export function Settings() {
-  const { user, loading: authLoading } = useAuth();
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [editingCategoryId, setEditingCategoryId] = useState<string | null>(null);
@@ -103,13 +100,6 @@ export function Settings() {
   const [editingItemValue, setEditingItemValue] = useState("");
 
   useEffect(() => {
-    if (!user) {
-      setCategories([]);
-      setLoading(false);
-      return;
-    }
-
-    setLoading(true);
     const q = query(collection(db, "categories"));
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const cats = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Category));
@@ -122,15 +112,12 @@ export function Settings() {
       }
     }, (error) => {
       console.error("Error fetching categories:", error);
-      // Only show error if it's not a permission error while logging out
-      if (user) {
-        toast.error("Không có quyền truy cập dữ liệu cài đặt");
-      }
+      toast.error("Không có quyền truy cập dữ liệu cài đặt");
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, [user]);
+  }, []);
 
   const seedInitialData = async () => {
     try {
@@ -191,30 +178,6 @@ export function Settings() {
       toast.error("Lỗi khi cập nhật phần tử");
     }
   };
-
-  if (authLoading) {
-    return (
-      <div className="h-full flex items-center justify-center">
-        <Loader2 className="h-8 w-8 text-[#2E68FF] animate-spin" />
-      </div>
-    );
-  }
-
-  if (!user) {
-    return (
-      <div className="h-[calc(100vh-8rem)] flex flex-col items-center justify-center font-sans text-center">
-        <div className="bg-white p-12 rounded-3xl shadow-sm border border-slate-100 max-w-md">
-          <div className="bg-slate-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Lock className="h-10 w-10 text-slate-400" />
-          </div>
-          <h2 className="text-2xl font-bold text-[#0A2540] mb-2">Yêu cầu đăng nhập</h2>
-          <p className="text-slate-500 mb-8">
-            Bạn cần đăng nhập để truy cập và quản lý các thiết lập hệ thống.
-          </p>
-        </div>
-      </div>
-    );
-  }
 
   if (loading) {
     return (
